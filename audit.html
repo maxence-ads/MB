@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TQXKWZW6');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Express Google Ads — Maxence Buffet</title>
+    <meta name="description" content="Réservez un audit express de 20 minutes en visio. Identifiez ce qui freine vos conversions Google Ads. Gratuit, sans engagement.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Lexend+Deca:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ========== RESET & VARIABLES ========== */
+        :root {
+            --primary-blue: #b0bcd4;
+            --primary-blue-light: rgba(176, 188, 212, 0.15);
+            --accent-blue-vibrant: #7c95b1;
+            --accent-blue-dark: #5a738f;
+            --brand-cta-light: #B6C4DD;
+            --brand-cta-hover: #c8d4e8;
+            --text-main: #111111;
+            --text-soft: #4a4a4a;
+            --text-muted: #94a3b8;
+            --bg-page: #f8fafc; /* Rendu légèrement gris pour faire ressortir les cartes blanches */
+            --bg-card: #ffffff; /* Cartes vraiment blanches pour le contraste */
+            --border-color: #e2e8f0;
+            --neutral-bg: #f1f5f9; /* Plus distinct pour les sous-cartes */
+            --radius-card: 16px;
+            --font-heading: 'Lexend Deca', sans-serif;
+            --font-body: 'Jost', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            background-color: var(--bg-page);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+        }
+
+        /* ========== LOGO HEADER ========== */
+        .audit-header {
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .audit-header img {
+            height: 52px; /* Logo agrandi d'environ +30% */
+            object-fit: contain;
+        }
+
+        /* ========== PAGE LAYOUT ========== */
+        .audit-page {
+            padding: 40px 20px 120px 20px; /* padding footer pour le CTA fixe */
+        }
+
+        .audit-container {
+            max-width: 680px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* ========== BADGE ========== */
+        .audit-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #059669;
+            background-color: rgba(5, 150, 105, 0.08);
+            padding: 8px 16px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+            animation: fadeUp 0.5s ease forwards;
+            border: 1px solid rgba(5, 150, 105, 0.15);
+        }
+
+        .audit-badge svg {
+            flex-shrink: 0;
+        }
+
+        /* ========== TITLE ========== */
+        .audit-title {
+            font-size: clamp(1.8rem, 5vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+            animation: fadeUp 0.5s 0.05s ease both;
+        }
+
+        /* ========== SUBTITLE ========== */
+        .audit-subtitle {
+            font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+            color: var(--text-soft);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            animation: fadeUp 0.5s 0.1s ease both;
+        }
+
+        .audit-subtitle p {
+            margin-bottom: 16px;
+        }
+
+        .audit-subtitle p:last-child {
+            margin-bottom: 0;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* ========== CTA ELEMENTS ========== */
+        .audit-cta-inline {
+            margin-bottom: 48px;
+            animation: fadeUp 0.5s 0.15s ease both;
+        }
+
+        .btn-cta-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            width: 100%;
+            padding: 16px 20px;
+            background-color: var(--accent-blue-vibrant);
+            color: #ffffff;
+            font-family: var(--font-body);
+            font-weight: 700;
+            border: none;
+            border-radius: var(--radius-card);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 24px rgba(124, 149, 177, 0.35);
+        }
+
+        .btn-cta-main:hover {
+            background-color: var(--accent-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(124, 149, 177, 0.45);
+        }
+
+        /* Flex wrap CTA Text to avoid clumsy line breaks on small devices */
+        .cta-txt {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* En mobile, toujours centré */
+            line-height: 1.3;
+        }
+
+        .cta-txt .main-txt {
+            font-size: 1.05rem;
+            white-space: nowrap;
+        }
+
+        .cta-txt .sub-txt {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .btn-cta-main svg {
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-cta-main:hover svg {
+            transform: translateX(4px);
+        }
+
+        .cta-sub-text {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 12px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        /* ========== CONTENT SECTIONS & CONTRAST ========== */
+        .audit-section {
+            background: var(--bg-card); /* Vraiment blanc */
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-card);
+            padding: clamp(28px, 5vw, 40px) clamp(20px, 4vw, 32px);
+            margin-bottom: 32px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.04); /* Ombre douce permanente */
+            transition: all 0.3s ease;
+        }
+
+        .audit-section:hover {
+            border-color: var(--accent-blue-vibrant);
+            box-shadow: 0 10px 40px rgba(124, 149, 177, 0.15);
+        }
+
+        .audit-section h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            line-height: 1.3;
+        }
+
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: var(--primary-blue-light);
+            color: var(--accent-blue-vibrant);
+        }
+
+        .audit-section p {
+            color: var(--text-soft);
+            margin-bottom: 16px;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .audit-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Un bloc visible pour casser la densité */
+        .alert-box {
+            background-color: var(--bg-page);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-blue-vibrant);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .alert-box svg {
+            color: var(--accent-blue-vibrant);
+            flex-shrink: 0;
+        }
+
+        /* ========== AUDIT ANALYSIS LIST ========== */
+        .audit-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px; /* Plus d'espace entre les éléments */
+        }
+
+        .audit-list li {
+            background-color: var(--bg-page); /* Gris très léger pour contraster dans le conteneur blanc */
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .audit-list li:hover {
+            border-color: var(--primary-blue);
+            background-color: #ffffff;
+        }
+
+        .audit-list h4 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .audit-list h4::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--accent-blue-vibrant);
+            flex-shrink: 0;
+        }
+
+        .audit-list p {
+            color: var(--text-soft);
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ========== TRUST STRIP ========== */
+        .trust-strip {
+            margin: 40px 0;
+            padding: 24px;
+            background: #ffffff;
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 12px; /* Espacement ajusté vertical/horizontal en mobile */
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+            font-weight: 600;
+            background: var(--neutral-bg);
+            padding: 10px 12px;
+            border-radius: 8px;
+        }
+
+        .trust-item svg {
+            flex-shrink: 0;
+            color: var(--accent-blue-vibrant);
+        }
+
+        /* ========== BOTTOM CTA BOX ========== */
+        .audit-cta-bottom {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 16px;
+        }
+
+        .audit-cta-bottom .btn-cta-main {
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        /* ========== SIGNATURE / FOOTER ========== */
+        .audit-footer {
+            padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 16px;
+        }
+
+        .audit-footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: var(--radius-card);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+        }
+
+        .audit-footer img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .audit-footer p {
+            color: var(--text-soft);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            text-align: left;
+            margin: 0;
+        }
+
+        .audit-footer strong {
+            color: var(--text-main);
+            display: block;
+        }
+
+        /* ========== STICKY CTA (MOBILE) ========== */
+        .sticky-cta {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 999;
+                display: block;
+                padding: 16px 20px;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border-top: 1px solid var(--border-color);
+                box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+            }
+
+            .sticky-cta .btn-cta-main {
+                padding: 16px;
+                gap: 12px;
+            }
+            .sticky-cta .cta-txt {
+                flex-direction: row;
+                gap: 8px;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 400px) {
+            /* Très petits écrans: le texte sub est ramené en dessous pour éviter d'écraser */
+            .sticky-cta .cta-txt {
+                flex-direction: column;
+                gap: 2px;
+                align-items: center;
+            }
+        }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: all 0.5s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== RESPONSIVE TWEAKS FOR DESKTOP ========== */
+        @media (min-width: 600px) {
+            .audit-page {
+                padding: 60px 24px 80px;
+            }
+
+            .btn-cta-main {
+                width: auto;
+                padding: 18px 40px;
+                display: inline-flex;
+            }
+
+            .cta-txt {
+                flex-direction: row;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .cta-txt .sub-txt::before {
+                content: "—";
+                margin-right: 6px;
+                display: inline-block;
+            }
+            .cta-txt .sub-txt {
+                margin-top: 0;
+            }
+
+            .audit-cta-inline {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start; /* Aligné à gauche sur grand écran */
+            }
+
+            .trust-strip {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                padding: 16px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQXKWZW6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Logo Header -->
+    <header class="audit-header">
+        <a href="/">
+            <img src="assets/logo-maxence.png" alt="Maxence Buffet — Spécialiste Google Ads">
+        </a>
+    </header>
+
+    <main class="audit-page">
+        <div class="audit-container">
+
+            <!-- Badge -->
+            <div class="audit-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Formulaire reçu
+            </div>
+
+            <!-- Title -->
+            <h1 class="audit-title">Identifiez ce qui freine vos demandes aujourd'hui.</h1>
+
+            <!-- Subtitle -->
+            <div class="audit-subtitle">
+                <p>Si vos Google Ads tournent mais que les demandes ne suivent pas, il y a très probablement une raison précise. Pas une théorie — quelque chose de visible, sur votre page ou dans votre tunnel.</p>
+                <p>C'est exactement ce qu'on regarde pendant cet audit.</p>
+            </div>
+
+            <!-- Primary CTA (inline) -->
+            <div class="audit-cta-inline">
+                <a href="https://tidycal.com/maxencebft/audit-express" target="_blank" class="btn-cta-main" id="cta-top">
+                    <span class="cta-txt">
+                        <span class="main-txt">Réserver mon audit express</span>
+                        <span class="sub-txt">20 min</span>
+                    </span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <div class="cta-sub-text">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="16" y1="2" x2="16" y2="6" stroke-linecap="round" stroke-linejoin="round"/><line x1="8" y1="2" x2="8" y2="6" stroke-linecap="round" stroke-linejoin="round"/><line x1="3" y1="10" x2="21" y2="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Gratuit · En visio · Sans engagement
+                </div>
+            </div>
+
+            <!-- Section: Ce que c'est concrètement -->
+            <div class="audit-section fade-in">
+                <h3>
+                    <span class="section-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4z"/><rect x="3" y="6" width="12" height="12" rx="2" ry="2"/></svg>
+                    </span>
+                    Ce que c'est concrètement
+                </h3>
+                
+                <div class="alert-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    Ce n'est pas un appel commercial.
+                </div>
+                
+                <p>C'est un audit express en visio — 20 minutes — pendant lesquelles on ouvre votre site, vos annonces ou votre page d'atterrissage, et on identifie ensemble les points qui freinent vos prises de contact.</p>
+                <p>Pas de présentation. Pas de pitch. On regarde quelque chose de réel.</p>
+            </div>
+
+            <!-- Section: Ce qu'on fait -->
+            <div class="audit-section fade-in">
+                <h3>
+                    <span class="section-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </span>
+                    Ce qu'on fait concrètement en 20 min
+                </h3>
+                <ul class="audit-list">
+                    <li>
+                        <h4>On identifie la fuite</h4>
+                        <p>Où est-ce que vos visiteurs décrochent exactement entre le clic publicitaire et la prise de contact ?</p>
+                    </li>
+                    <li>
+                        <h4>On regarde les choses avec un œil neuf</h4>
+                        <p>Ce qui vous paraît évident ne l'est pas toujours pour un prospect froid qui vous découvre pour la première fois.</p>
+                    </li>
+                    <li>
+                        <h4>On valide l'intention</h4>
+                        <p>Ceux qui cliquent sur vos annonces viennent-ils chercher <em>exactement</em> ce que votre page leur propose ?</p>
+                    </li>
+                    <li>
+                        <h4>On liste 2 à 3 actions correctives</h4>
+                        <p>Vous repartez avec des pistes claires, applicables tout de suite, pour relancer la machine.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Section: Pour qui -->
+            <div class="audit-section fade-in">
+                <h3>
+                    <span class="section-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </span>
+                    Pour qui cet audit est utile
+                </h3>
+                <p>Cet audit est pertinent si vous avez <strong>déjà une activité en place</strong> — coaching, prestation, service local — et que vous investissez ou envisagez d'investir sur Google Ads pour générer des demandes.</p>
+                <p>Il ne s'agit pas de repartir de zéro. Il s'agit d'identifier ce qui bloque, là où vous en êtes.</p>
+            </div>
+
+            <!-- Section: Après l'appel -->
+            <div class="audit-section fade-in">
+                <h3>
+                    <span class="section-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    Après l'appel
+                </h3>
+                <p>À la fin des 20 minutes, vous repartez avec une lecture claire de vos 2 ou 3 freins principaux.</p>
+                <p>Si je peux vous aider à les corriger, je vous explique comment j'interviens.<br>Si ce n'est pas le bon moment ou que ce n'est pas mon domaine, je vous le dis.</p>
+            </div>
+
+            <!-- Trust Strip -->
+            <div class="trust-strip fade-in">
+                <div class="trust-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    Google Ads certifié
+                </div>
+                <div class="trust-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    20 min chrono
+                </div>
+                <div class="trust-item">
+                    <!-- Euro Icon -->
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12"/><path d="M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></svg>
+                    100% gratuit
+                </div>
+                <div class="trust-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                    Sans engagement
+                </div>
+            </div>
+
+            <!-- Bottom CTA -->
+            <div class="audit-cta-bottom fade-in">
+                <a href="https://tidycal.com/maxencebft/audit-express" target="_blank" class="btn-cta-main" id="cta-bottom">
+                    <span class="cta-txt">
+                        <span class="main-txt">Réserver mon audit express</span>
+                        <span class="sub-txt">20 min</span>
+                    </span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <div class="cta-sub-text" style="margin-top: 12px;">
+                    Gratuit · En visio · Sans engagement
+                </div>
+            </div>
+
+            <!-- Signature -->
+            <div class="audit-footer fade-in">
+                <div class="audit-footer-inner">
+                    <img src="assets/hero-maxence.png" alt="Maxence Buffet">
+                    <p><strong>Maxence</strong><br>Spécialiste Google Ads &amp; pages de conversion pour TPE et indépendants.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sticky CTA Mobile -->
+    <div class="sticky-cta" id="sticky-cta">
+        <a href="https://tidycal.com/maxencebft/audit-express" target="_blank" class="btn-cta-main">
+            <span class="cta-txt">
+                <span class="main-txt">Réserver mon audit</span>
+                <span class="sub-txt">20 min</span>
+            </span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+    </div>
+
+    <script>
+        // Scroll reveal for sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Show sticky CTA after scrolling past the inline CTA
+        const ctaTop = document.getElementById('cta-top');
+        const stickyCta = document.getElementById('sticky-cta');
+
+        if (ctaTop && stickyCta) {
+            const stickyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        stickyCta.style.transform = 'translateY(0)';
+                        stickyCta.style.opacity = '1';
+                    } else {
+                        stickyCta.style.transform = 'translateY(100%)';
+                        stickyCta.style.opacity = '0';
+                    }
+                });
+            }, { threshold: 0 });
+
+            stickyObserver.observe(ctaTop);
+
+            // Initialize hidden
+            stickyCta.style.transform = 'translateY(100%)';
+            stickyCta.style.opacity = '0';
+            stickyCta.style.transition = 'all 0.3s ease';
+        }
+    </script>
+</body>
+
+</html>
