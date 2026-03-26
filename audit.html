@@ -532,7 +532,7 @@
 
             <!-- Subtitle -->
             <div class="audit-subtitle">
-                <p>Si vos Google Ads tournent mais que les demandes ne suivent pas, il y a très probablement une raison précise. Pas une théorie — quelque chose de visible, sur votre page ou dans votre tunnel.</p>
+                <p>Si vos annonces Google tournent mais que les demandes ne suivent pas, il y a très probablement une raison précise. Pas une théorie — quelque chose de visible, sur votre page ou dans votre tunnel.</p>
                 <p>C'est exactement ce qu'on regarde pendant cet audit.</p>
             </div>
 
@@ -689,24 +689,38 @@
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Show sticky CTA after scrolling past the inline CTA
+        // Show sticky CTA after scrolling past the inline CTA and hide it when reaching the bottom CTA
         const ctaTop = document.getElementById('cta-top');
+        const ctaBottom = document.getElementById('cta-bottom');
         const stickyCta = document.getElementById('sticky-cta');
 
-        if (ctaTop && stickyCta) {
+        if (ctaTop && ctaBottom && stickyCta) {
+            let isTopVisible = true;
+            let isBottomVisible = false;
+
+            const updateStickyVisibility = () => {
+                if (!isTopVisible && !isBottomVisible) {
+                    stickyCta.style.transform = 'translateY(0)';
+                    stickyCta.style.opacity = '1';
+                } else {
+                    stickyCta.style.transform = 'translateY(100%)';
+                    stickyCta.style.opacity = '0';
+                }
+            };
+
             const stickyObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                        stickyCta.style.transform = 'translateY(0)';
-                        stickyCta.style.opacity = '1';
-                    } else {
-                        stickyCta.style.transform = 'translateY(100%)';
-                        stickyCta.style.opacity = '0';
+                    if (entry.target.id === 'cta-top') {
+                        isTopVisible = entry.isIntersecting;
+                    } else if (entry.target.id === 'cta-bottom') {
+                        isBottomVisible = entry.isIntersecting;
                     }
                 });
+                updateStickyVisibility();
             }, { threshold: 0 });
 
             stickyObserver.observe(ctaTop);
+            stickyObserver.observe(ctaBottom);
 
             // Initialize hidden
             stickyCta.style.transform = 'translateY(100%)';
