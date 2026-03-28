@@ -385,13 +385,14 @@ h6 {
     }
 
     .hero {
-        padding: 100px 0 60px;
+        padding: 130px 0 60px;
         text-align: center;
+        min-height: auto;
     }
 
     .hero-container {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 24px;
     }
 
     .hero-image-wrapper {
@@ -403,13 +404,13 @@ h6 {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
         line-height: 1.1;
     }
 
     .hero-description {
-        font-size: 1.1rem;
-        margin-bottom: 32px;
+        font-size: 1.05rem;
+        margin-bottom: 24px;
     }
 
     .hero-content {
@@ -417,7 +418,7 @@ h6 {
     }
 
     .main-image {
-        max-height: 320px;
+        max-height: 220px;
         object-position: top;
     }
 
@@ -430,6 +431,8 @@ h6 {
     .hero-buttons .btn {
         width: 100%;
         max-width: 100%;
+        padding: 14px 20px;
+        font-size: 0.95rem;
     }
 }
 
@@ -1327,5 +1330,250 @@ h6 {
 
     .choice-card span:nth-of-type(2) {
         margin-bottom: 16px !important;
+    }
+}
+
+/* =========================================
+   MOBILE-FIRST OPTIMIZATION (< 767px)
+   Aérer l'ensemble du site pour mobile
+   ========================================= */
+@media (max-width: 767px) {
+
+    /* --- HERO TAG --- */
+    .hero-tag {
+        margin-bottom: 16px;
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+
+    /* --- SECTION COMPARATIVE --- */
+    .comparison-section {
+        padding: 70px 20px !important;
+    }
+
+    .comparison-section .section-header {
+        margin-bottom: 24px;
+    }
+
+    .comparison-section .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .comparison-section .section-intro {
+        font-size: 0.95rem;
+    }
+
+    .comparison-column {
+        padding: 20px 16px !important;
+    }
+
+    .comparison-container {
+        gap: 14px;
+    }
+
+    .col-title {
+        font-size: 1.1rem !important;
+    }
+
+    .col-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 14px;
+    }
+
+    .comparison-list li {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+
+    .result-box {
+        padding: 14px;
+        font-size: 0.9rem;
+    }
+
+    /* --- CALCULATEUR / SIMULATEUR --- */
+    #section-simulation {
+        padding: 70px 20px !important;
+    }
+
+    #section-simulation .section-header {
+        margin-bottom: 24px;
+    }
+
+    #section-simulation .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    #section-simulation .section-header p {
+        font-size: 0.95rem;
+    }
+
+    .slider-box {
+        padding: 18px 14px;
+    }
+
+    .res-box {
+        padding: 8px 0 20px 0;
+    }
+
+    .res-val {
+        font-size: 2rem !important;
+    }
+
+    .persuasion {
+        font-size: 0.9rem;
+        margin: 20px 0;
+    }
+
+    /* --- TIMELINE / MÉTHODE --- */
+    .timeline-section {
+        padding: 70px 20px !important;
+    }
+
+    .timeline-header {
+        margin-bottom: 30px;
+    }
+
+    .timeline-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .timeline-item {
+        margin-bottom: 24px;
+    }
+
+    .timeline-card {
+        padding: 16px 14px;
+    }
+
+    .timeline-card h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .timeline-card p {
+        font-size: 0.9rem;
+    }
+
+    .timeline-footer-cta {
+        padding-top: 24px;
+        margin-top: 10px;
+    }
+
+    .timeline-footer-cta p {
+        font-size: 0.95rem;
+        margin-bottom: 16px;
+    }
+
+    .btn-reminder {
+        padding: 14px 22px;
+        font-size: 0.9rem;
+    }
+
+    /* --- SECTION ENGAGEMENT --- */
+    .engagement-section {
+        padding: 80px 20px !important;
+    }
+
+    .engagement-section h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 16px !important;
+    }
+
+    .engagement-section p {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+    }
+
+    /* --- BENTO GRID / EXPERTISE --- */
+    .data-section {
+        padding: 70px 20px !important;
+    }
+
+    .data-header {
+        margin-bottom: 24px;
+    }
+
+    .data-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .bento-card {
+        padding: 20px 16px;
+    }
+
+    .bento-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .bento-card .description {
+        font-size: 0.9rem;
+        margin-bottom: 16px;
+    }
+
+    .stat-value {
+        font-size: 2.2rem;
+    }
+
+    .bento-grid {
+        gap: 14px;
+    }
+
+    /* --- FAQ --- */
+    .faq-section {
+        padding: 70px 20px !important;
+    }
+
+    .faq-header {
+        margin-bottom: 30px;
+    }
+
+    .faq-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .faq-container {
+        gap: 10px;
+    }
+
+    .faq-question {
+        padding: 18px 16px;
+    }
+
+    .faq-question h3 {
+        font-size: 0.95rem;
+        padding-right: 12px;
+    }
+
+    .faq-answer {
+        padding: 0 16px;
+        font-size: 0.95rem;
+    }
+
+    .faq-item.open .faq-answer {
+        padding-bottom: 20px;
+    }
+
+    /* --- FINAL CTA --- */
+    .final-cta-section {
+        padding: 70px 20px !important;
+        margin-bottom: 20px;
+    }
+
+    .final-cta-card h2 {
+        font-size: 1.6rem;
+    }
+
+    /* --- FOOTER --- */
+    .site-footer {
+        padding: 60px 5% 30px 5%;
+    }
+
+    .footer-top {
+        margin-bottom: 30px;
+        gap: 24px;
+    }
+
+    .footer-bottom {
+        padding-top: 20px;
     }
 }
