@@ -969,7 +969,7 @@ h6 {
 .timeline-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    padding: clamp(20px, 4vw, 32px);
+    padding: clamp(24px, 4vw, 36px);
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
     transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -990,7 +990,7 @@ h6 {
     text-transform: uppercase;
     color: var(--primary-blue);
     display: block;
-    margin-bottom: 0px;
+    margin-bottom: 8px;
     line-height: 1;
 }
 
@@ -1023,6 +1023,8 @@ h6 {
     line-height: 1.4;
 }
 
+.engagement-text-mobile { display: none; }
+
 .btn-reminder {
     background-color: var(--primary-blue);
     color: var(--bg-page);
@@ -1054,7 +1056,7 @@ h6 {
     }
 
     .step-label {
-        margin-bottom: 12px;
+        margin-bottom: 14px;
         line-height: normal;
     }
 }
@@ -1434,20 +1436,21 @@ h6 {
     }
 
     .timeline-item {
-        margin-bottom: 24px;
+        margin-bottom: 32px;
     }
 
     .timeline-card {
-        padding: 16px 14px;
+        padding: 22px 20px;
     }
 
     .timeline-card h3 {
-        font-size: 1rem;
-        margin-bottom: 8px;
+        font-size: 1.05rem;
+        margin-bottom: 10px;
     }
 
     .timeline-card p {
-        font-size: 0.9rem;
+        font-size: 0.92rem;
+        line-height: 1.6;
     }
 
     .timeline-footer-cta {
@@ -1467,17 +1470,29 @@ h6 {
 
     /* --- SECTION ENGAGEMENT --- */
     .engagement-section {
-        padding: 80px 20px !important;
+        padding: 56px 24px !important;
     }
 
     .engagement-section h2 {
         font-size: 1.5rem !important;
-        margin-bottom: 16px !important;
+        margin-bottom: 18px !important;
+        line-height: 1.25 !important;
     }
 
     .engagement-section p {
         font-size: 0.95rem !important;
-        line-height: 1.6 !important;
+        line-height: 1.7 !important;
+    }
+
+    .engagement-text-desktop { display: none !important; }
+    .engagement-text-mobile { display: block !important; }
+
+    .engagement-section .btn {
+        display: flex;
+        width: 100%;
+        padding: 16px 20px;
+        margin-top: 28px !important;
+        font-size: 1rem;
     }
 
     /* --- BENTO GRID / EXPERTISE --- */
