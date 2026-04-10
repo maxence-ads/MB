@@ -1734,6 +1734,248 @@
 
         updateCalculator();
     </script>
+
+    <!-- ===================== BANNIÈRE COOKIES ===================== -->
+    <div id="cookie-banner" class="ck-banner" role="dialog" aria-label="Préférences de cookies">
+
+        <!-- VUE PRINCIPALE -->
+        <div id="ck-view-main" class="ck-view">
+            <div class="ck-inner">
+                <div class="ck-left">
+                    <div class="ck-icon-wrap">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="8" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="10" cy="14.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+                    </div>
+                    <div class="ck-text">
+                        <p class="ck-title">Un petit cookie pour la route ?</p>
+                        <p class="ck-desc"><span class="ck-desc-desktop">Des cookies pour une meilleure expérience, sans jamais partager vos infos. On garde ça sécurisé et privé – vos données restent bien à l'abri !</span><span class="ck-desc-mobile">Des cookies pour une meilleure expérience, sans jamais partager vos infos. On garde ça sécurisé et privé !</span></p>
+                    </div>
+                </div>
+                <div class="ck-actions">
+                    <button class="ck-btn-accept" onclick="ckAcceptAll()">Tout accepter</button>
+                    <button class="ck-btn-secondary" onclick="ckOpenPrefs()">Personnaliser</button>
+                </div>
+            </div>
+            <button class="ck-reject-corner" onclick="ckRejectAll()">Tout refuser</button>
+        </div>
+
+        <!-- VUE PRÉFÉRENCES (dans la même bannière) -->
+        <div id="ck-view-prefs" class="ck-view" style="display:none;">
+            <div class="ck-prefs-inline">
+                <p class="ck-prefs-title">Personnaliser mes choix</p>
+                <div class="ck-prefs-list">
+                    <div class="ck-prefs-item">
+                        <div class="ck-prefs-info">
+                            <span class="ck-prefs-name">Essentiels</span>
+                            <span class="ck-prefs-desc">Nécessaires au fonctionnement. Toujours actifs.</span>
+                        </div>
+                        <div class="ck-toggle ck-toggle-disabled"><span class="ck-toggle-knob"></span></div>
+                    </div>
+                    <div class="ck-prefs-item">
+                        <div class="ck-prefs-info">
+                            <span class="ck-prefs-name">Analytiques</span>
+                            <span class="ck-prefs-desc">Mesure d'audience via Google Analytics.</span>
+                        </div>
+                        <label class="ck-toggle" aria-label="Activer les cookies analytiques">
+                            <input type="checkbox" id="ck-analytics-toggle" checked />
+                            <span class="ck-toggle-knob"></span>
+                        </label>
+                    </div>
+                    <div class="ck-prefs-item">
+                        <div class="ck-prefs-info">
+                            <span class="ck-prefs-name">Marketing</span>
+                            <span class="ck-prefs-desc">Publicités personnalisées (Google Ads).</span>
+                        </div>
+                        <label class="ck-toggle" aria-label="Activer les cookies marketing">
+                            <input type="checkbox" id="ck-marketing-toggle" checked />
+                            <span class="ck-toggle-knob"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ck-prefs-actions">
+                    <button class="ck-btn-accept" onclick="ckSavePrefs()">Enregistrer mes choix</button>
+                </div>
+            </div>
+            <button class="ck-reject-corner" onclick="ckRejectAll()">Tout refuser</button>
+        </div>
+
+    </div>
+
+    <style>
+        .ck-banner {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(120%);
+            width: min(980px, calc(100vw - 32px));
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px -10px rgba(15, 23, 42, 0.14);
+            padding: 28px 24px 36px;
+            z-index: 9999;
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .ck-banner.ck-visible { transform: translateX(-50%) translateY(0); }
+        .ck-view { width: 100%; }
+
+        /* --- VUE PRINCIPALE --- */
+        .ck-inner { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+        .ck-left { display: flex; align-items: flex-start; gap: 14px; flex: 1 1 300px; }
+        .ck-icon-wrap {
+            flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
+            background: rgba(176, 188, 212, 0.12); border: 1px solid rgba(176, 188, 212, 0.25);
+            display: flex; align-items: center; justify-content: center; color: #7c95b1; margin-top: 2px;
+        }
+        .ck-title { font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--text-main); margin: 0 0 3px; }
+        .ck-desc { font-size: 0.82rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
+        .ck-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+
+        /* Bouton principal */
+        .ck-btn-accept {
+            background: #B6C4DD; color: #111827; border: none; padding: 11px 22px;
+            border-radius: 12px; font-weight: 700; font-size: 0.9rem; cursor: pointer;
+            transition: background 0.2s, transform 0.2s; white-space: nowrap; font-family: var(--font-body);
+        }
+        .ck-btn-accept:hover { background: #c8d4e8; transform: translateY(-1px); }
+
+        /* Bouton secondaire (Personnaliser) */
+        .ck-btn-secondary {
+            background: transparent; color: var(--text-soft);
+            border: 1px solid var(--border-color);
+            padding: 11px 18px; border-radius: 12px; font-weight: 600; font-size: 0.87rem;
+            cursor: pointer; transition: border-color 0.2s, color 0.2s;
+            white-space: nowrap; font-family: var(--font-body);
+        }
+        .ck-btn-secondary:hover { border-color: #94a3b8; color: var(--text-main); }
+
+        /* Tout refuser — coin bas droite */
+        .ck-reject-corner {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            background: none; border: none;
+            color: #c8d0de;
+            font-size: 0.68rem;
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            padding: 2px;
+            font-family: var(--font-body);
+            white-space: nowrap;
+            letter-spacing: 0.01em;
+        }
+        .ck-reject-corner:hover { color: var(--text-muted); }
+
+        .ck-desc-mobile { display: none; }
+        @media (max-width: 600px) {
+            .ck-desc-desktop { display: none; }
+            .ck-desc-mobile { display: inline; }
+        }
+
+        /* --- VUE PRÉFÉRENCES INLINE --- */
+        .ck-prefs-inline { width: 100%; }
+        .ck-prefs-title { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: var(--text-main); margin: 0 0 14px; }
+        .ck-prefs-list { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+        .ck-prefs-item {
+            display: flex; align-items: center; justify-content: space-between; gap: 12px;
+            padding: 12px 14px; border: 1px solid var(--border-color);
+            border-radius: 12px; background: var(--bg-card);
+            flex: 1 1 180px;
+        }
+        .ck-prefs-name { display: block; font-weight: 600; font-size: 0.85rem; color: var(--text-main); margin-bottom: 2px; }
+        .ck-prefs-desc { display: block; font-size: 0.75rem; color: var(--text-muted); line-height: 1.35; }
+        .ck-prefs-actions { display: flex; align-items: center; gap: 12px; }
+
+        /* Toggle */
+        .ck-toggle {
+            position: relative; display: inline-flex; align-items: center;
+            width: 44px; height: 24px; flex-shrink: 0; cursor: pointer;
+        }
+        .ck-toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+        .ck-toggle-knob {
+            position: absolute; inset: 0; background: #e2e8f0;
+            border-radius: 999px; transition: background 0.25s;
+        }
+        .ck-toggle-knob::after {
+            content: ''; position: absolute; left: 3px; top: 3px;
+            width: 18px; height: 18px; border-radius: 50%;
+            background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.15); transition: transform 0.25s;
+        }
+        .ck-toggle input:checked ~ .ck-toggle-knob { background: #7c95b1; }
+        .ck-toggle input:checked ~ .ck-toggle-knob::after { transform: translateX(20px); }
+        .ck-toggle-disabled .ck-toggle-knob { background: #B6C4DD; cursor: not-allowed; }
+        .ck-toggle-disabled .ck-toggle-knob::after { transform: translateX(20px); }
+
+        @media (max-width: 600px) {
+            .ck-banner { bottom: 12px; padding: 16px 16px 34px; }
+            .ck-inner { gap: 12px; }
+            .ck-actions { width: 100%; flex-direction: column; align-items: stretch; }
+            .ck-btn-accept, .ck-btn-secondary { text-align: center; }
+            .ck-reject-corner { bottom: 8px; right: 14px; }
+            .ck-prefs-list { flex-direction: column; }
+            .ck-prefs-item { flex: 1 1 auto; }
+        }
+    </style>
+
+    <script>
+        (function () {
+            var STORAGE_KEY = 'mb_cookie_consent';
+
+            function ckGetConsent() {
+                try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch (e) { return null; }
+            }
+
+            function ckSetConsent(analytics, marketing) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics: analytics, marketing: marketing, date: new Date().toISOString() }));
+                ckApplyConsent(analytics, marketing);
+                document.getElementById('cookie-banner').classList.remove('ck-visible');
+            }
+
+            function ckApplyConsent(analytics, marketing) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'cookie_consent_update',
+                    analytics_storage: analytics ? 'granted' : 'denied',
+                    ad_storage: marketing ? 'granted' : 'denied',
+                    ad_user_data: marketing ? 'granted' : 'denied',
+                    ad_personalization: marketing ? 'granted' : 'denied'
+                });
+            }
+
+            window.ckAcceptAll = function () { ckSetConsent(true, true); };
+            window.ckRejectAll = function () { ckSetConsent(false, false); };
+
+            window.ckOpenPrefs = function () {
+                document.getElementById('ck-view-main').style.display = 'none';
+                document.getElementById('ck-view-prefs').style.display = 'block';
+            };
+
+            window.ckSavePrefs = function () {
+                ckSetConsent(
+                    document.getElementById('ck-analytics-toggle').checked,
+                    document.getElementById('ck-marketing-toggle').checked
+                );
+            };
+
+            var existing = ckGetConsent();
+            if (existing) {
+                ckApplyConsent(existing.analytics, existing.marketing);
+            } else {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'cookie_consent_update',
+                    analytics_storage: 'denied',
+                    ad_storage: 'denied',
+                    ad_user_data: 'denied',
+                    ad_personalization: 'denied'
+                });
+                setTimeout(function () {
+                    document.getElementById('cookie-banner').classList.add('ck-visible');
+                }, 800);
+            }
+        })();
+    </script>
+    <!-- ============================================================ -->
 </body>
 
 </html>
