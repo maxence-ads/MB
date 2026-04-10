@@ -886,7 +886,6 @@ h6 {
 .problem-section {
     background-color: var(--bg-page);
     padding: clamp(48px, 8vw, 80px) 24px;
-    border-bottom: 1px solid var(--border-color);
 }
 
 .problem-container {
